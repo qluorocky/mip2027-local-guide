@@ -1,0 +1,7 @@
+.openai/
+.env
+.env.*
+__pycache__/
+*.pyc
+*.tar.gz
+*.tgz
