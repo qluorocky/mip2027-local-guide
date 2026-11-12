@@ -2,7 +2,7 @@
 
 Interactive local guide for the Mixed Integer Programming Workshop, University of Iowa, May 25–28, 2027.
 
-**Live guide:** https://mip2027-iowa-city-guide.qiluo-email.chatgpt.site
+**Live guide:** https://qluorocky.github.io/mip2027-local-guide/
 
 ## Explore
 
@@ -41,8 +41,9 @@ The check covers data and list consistency, venue labels, coordinates, Google ra
 - `dist/assets/mip-2027.jpg`: supplied MIP 2027 logo.
 - `restaurant-rating-sources.json`: direct Google Maps rating sources for the 10 additions.
 - `check_guide.py`: runnable consistency and syntax checks.
+- `.github/workflows/pages.yml`: publishes `dist/` to GitHub Pages.
 
-The public GitHub project is a source copy. Its files do not configure GitHub Pages or change the existing hosted guide automatically.
+GitHub Pages serves `dist/` at the live guide address above. Changes to `dist/` on `main` publish automatically through the Pages workflow; the workflow can also be run manually from the Actions tab.
 
 ## Credits
 
