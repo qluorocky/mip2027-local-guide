@@ -6,7 +6,8 @@ Interactive local guide for the Mixed Integer Programming Workshop, University o
 
 ## Explore
 
-- Conference venues: **Tippie College of Business (Pappajohn Business Building)** and **Graduate by Hilton Iowa City**.
+- Conference venue: **Graduate by Hilton Iowa City**.
+- Campus point of interest: **Tippie College of Business (Pappajohn Business Building)**.
 - 42 places and event listings, including 18 restaurants and 10 cafés.
 - Numbered, colored map pins synchronized with place lists.
 - Category, neighborhood, cuisine, and text filters.

@@ -17,7 +17,12 @@ assert len(p)==42 and len(set(ids))==42
 assert e.cards==ids and set(e.links)==set(ids)
 assert len(e.ids)==len(set(e.ids)), 'Duplicate HTML IDs'
 venues=[x for x in p if x['category']=='venue']
-assert len(venues)==2 and 'Tippie' in venues[0]['name'] and 'Graduate' in venues[1]['name']
+assert len(venues)==1 and venues[0]['id']=='02' and 'Graduate' in venues[0]['name']
+tippie=next(x for x in p if x['id']=='01')
+assert tippie['category']=='poi' and 'point of interest' in tippie['description']
+essentials=re.search(r'<section class="essentials"[^>]*>(.*?)</section>',s,re.S)[1]
+assert 'Graduate by Hilton' in essentials and 'Tippie' not in essentials
+assert 'data-category="poi"' in s
 assert not re.search(r'\bIMU\b|Iowa Memorial Union',s,re.I)
 assert len([x for x in p if x['category']=='event'])==6
 assert len([x for x in p if x['category']=='dining'])==18
@@ -40,4 +45,4 @@ for i,script in enumerate(re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>',s,re.
     if script.strip().startswith('[{'):continue
     with tempfile.NamedTemporaryFile(suffix='.js',mode='w') as f:
         f.write(script);f.flush();subprocess.run(['node','--check',f.name],check=True,capture_output=True)
-print('PASS: 42 map/list entries; 10 new Google ratings >3.5 with source coordinates; 2 venues; 18 restaurants; 10 cafes; 6 events; links, IDs and JavaScript syntax.')
+print('PASS: 42 map/list entries; 10 new Google ratings >3.5 with source coordinates; 1 conference venue; Tippie as a point of interest; 18 restaurants; 10 cafes; 6 events; links, IDs and JavaScript syntax.')
